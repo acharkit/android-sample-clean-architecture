@@ -35,7 +35,6 @@ public abstract class UseCase<Q extends UseCase.RequestValues, P extends UseCase
 
     protected abstract P executeUseCaseSync(Q requestValues);
 
-
     /**
      * Data passed to a request.
      */
@@ -53,7 +52,6 @@ public abstract class UseCase<Q extends UseCase.RequestValues, P extends UseCase
      */
     public interface ErrorValue {
     }
-
 
     public interface UseCaseCallback<R, E> {
         void onSuccess(R response);

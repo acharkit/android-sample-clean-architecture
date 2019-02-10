@@ -1,6 +1,8 @@
 package ir.acharkit.android.sampleCleanArchitecture.data.source.local;
 
 
+import ir.acharkit.android.sampleCleanArchitecture.domain.model.ExampleModel;
+
 /**
  * Author:  Alireza Tizfahm Fard
  * Date:    2/1/19
@@ -15,5 +17,15 @@ public class LocalRepository implements ILocalRepository {
         if (instance == null)
             instance = new LocalRepository();
         return instance;
+    }
+
+    @Override
+    public ExampleModel getExampleLocal(int id) {
+        return null;
+    }
+
+    @Override
+    public void addExampleLocal(ExampleModel model) {
+
     }
 }

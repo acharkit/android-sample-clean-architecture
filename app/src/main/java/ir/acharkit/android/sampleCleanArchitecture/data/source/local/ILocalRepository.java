@@ -1,5 +1,7 @@
 package ir.acharkit.android.sampleCleanArchitecture.data.source.local;
 
+import ir.acharkit.android.sampleCleanArchitecture.domain.model.ExampleModel;
+
 /**
  * Author:  Alireza Tizfahm Fard
  * Date:    2/1/19
@@ -8,6 +10,8 @@ package ir.acharkit.android.sampleCleanArchitecture.data.source.local;
 
 public interface ILocalRepository {
 
+    ExampleModel getExampleLocal(int id);
 
+    void addExampleLocal(ExampleModel model);
 
 }

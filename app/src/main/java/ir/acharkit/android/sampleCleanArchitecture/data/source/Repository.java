@@ -1,7 +1,8 @@
 package ir.acharkit.android.sampleCleanArchitecture.data.source;
 
-import ir.acharkit.android.sampleCleanArchitecture.data.source.local.LocalRepository;
-import ir.acharkit.android.sampleCleanArchitecture.data.source.remote.RemoteRepository;
+import ir.acharkit.android.sampleCleanArchitecture.data.source.local.ILocalRepository;
+import ir.acharkit.android.sampleCleanArchitecture.data.source.remote.IRemoteRepository;
+import ir.acharkit.android.sampleCleanArchitecture.domain.model.ExampleModel;
 
 /**
  * Author:  Alireza Tizfahm Fard
@@ -13,15 +14,15 @@ public class Repository implements IRepository {
 
     private static Repository instance = null;
 
-    private RemoteRepository remoteRepository;
-    private LocalRepository localRepository;
+    private IRemoteRepository remoteRepository;
+    private ILocalRepository localRepository;
 
-    private Repository(RemoteRepository remoteRepository, LocalRepository localRepository) {
+    private Repository(IRemoteRepository remoteRepository, ILocalRepository localRepository) {
         this.remoteRepository = remoteRepository;
         this.localRepository = localRepository;
     }
 
-    public static Repository getInstance(RemoteRepository remoteRepository, LocalRepository localRepository) {
+    public static Repository getInstance(IRemoteRepository remoteRepository, ILocalRepository localRepository) {
         if (instance == null) {
             instance = new Repository(remoteRepository, localRepository);
         }
@@ -30,5 +31,15 @@ public class Repository implements IRepository {
 
     public static void destroyInstance() {
         instance = null;
+    }
+
+    @Override
+    public ExampleModel getExample(int id) {
+        return localRepository.getExampleLocal(id);
+    }
+
+    @Override
+    public void addExample(ExampleModel model) {
+        localRepository.addExampleLocal(model);
     }
 }
