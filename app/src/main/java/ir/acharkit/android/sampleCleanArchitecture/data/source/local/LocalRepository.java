@@ -21,11 +21,14 @@ public class LocalRepository implements ILocalRepository {
 
     @Override
     public ExampleModel getExampleLocal(int id) {
-        return null;
+        // implement application storage (db , preferences, ......)
+
+        // for test return fake response
+        return new ExampleModel(1, "hello clean architecture");
     }
 
     @Override
     public void addExampleLocal(ExampleModel model) {
-
+        // implement application storage (db , preferences, ......)
     }
 }

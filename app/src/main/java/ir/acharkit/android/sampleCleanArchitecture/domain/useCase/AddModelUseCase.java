@@ -10,11 +10,11 @@ import ir.acharkit.android.sampleCleanArchitecture.domain.model.ExampleModel;
  * Email:   alirezat775@gmail.com
  */
 
-public class AddExample extends UseCase<AddExample.RequestValues, AddExample.ResponseValue, AddExample.ErrorValue> {
+public class AddModelUseCase extends UseCase<AddModelUseCase.RequestValues, AddModelUseCase.ResponseValue, AddModelUseCase.ErrorValue> {
 
     private final Repository repository;
 
-    public AddExample(Repository repository) {
+    public AddModelUseCase(Repository repository) {
         this.repository = repository;
     }
 

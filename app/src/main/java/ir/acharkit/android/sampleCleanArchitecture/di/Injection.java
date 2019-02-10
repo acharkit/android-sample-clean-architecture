@@ -5,8 +5,8 @@ import ir.acharkit.android.sampleCleanArchitecture.base.useCase.UseCaseHandler;
 import ir.acharkit.android.sampleCleanArchitecture.data.source.Repository;
 import ir.acharkit.android.sampleCleanArchitecture.data.source.local.LocalRepository;
 import ir.acharkit.android.sampleCleanArchitecture.data.source.remote.RemoteRepository;
-import ir.acharkit.android.sampleCleanArchitecture.domain.useCase.AddExample;
-import ir.acharkit.android.sampleCleanArchitecture.domain.useCase.GetExample;
+import ir.acharkit.android.sampleCleanArchitecture.domain.useCase.AddModelUseCase;
+import ir.acharkit.android.sampleCleanArchitecture.domain.useCase.GetModelUseCase;
 
 /**
  * Author:  Alireza Tizfahm Fard
@@ -24,12 +24,12 @@ public class Injection {
         return UseCaseHandler.getInstance();
     }
 
-    public static GetExample provideGetExample() {
-        return new GetExample(provideRepository());
+    public static GetModelUseCase provideGetModelUseCase() {
+        return new GetModelUseCase(provideRepository());
     }
 
-    public static AddExample provideAddExample() {
-        return new AddExample(provideRepository());
+    public static AddModelUseCase provideAddModelUseCase() {
+        return new AddModelUseCase(provideRepository());
     }
 
 }

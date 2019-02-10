@@ -24,6 +24,7 @@ public class UseCaseHandler {
         return result;
     }
 
+    @SuppressWarnings("unchecked")
     public <T extends UseCase.RequestValues, R extends UseCase.ResponseValue, Z extends UseCase.ErrorValue> void execute(final UseCase<T, R, Z> useCase, T values, UseCase.UseCaseCallback<R, Z> callback) {
         useCase.setRequestValues(values);
         useCase.setUseCaseCallback(new UiCallbackWrapper(callback, this));
