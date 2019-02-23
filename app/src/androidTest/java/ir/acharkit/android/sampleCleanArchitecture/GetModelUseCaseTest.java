@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import androidx.test.runner.AndroidJUnit4;
 import ir.acharkit.android.sampleCleanArchitecture.base.useCase.UseCaseHandler;
 import ir.acharkit.android.sampleCleanArchitecture.di.Injection;
-import ir.acharkit.android.sampleCleanArchitecture.domain.useCase.GetModelUseCase;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

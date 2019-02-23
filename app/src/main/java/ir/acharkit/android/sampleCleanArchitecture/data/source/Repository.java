@@ -2,13 +2,6 @@ package ir.acharkit.android.sampleCleanArchitecture.data.source;
 
 import ir.acharkit.android.sampleCleanArchitecture.data.source.local.ILocalRepository;
 import ir.acharkit.android.sampleCleanArchitecture.data.source.remote.IRemoteRepository;
-import ir.acharkit.android.sampleCleanArchitecture.domain.model.ExampleModel;
-
-/**
- * Author:  Alireza Tizfahm Fard
- * Date:    2/1/19
- * Email:   alirezat775@gmail.com
- */
 
 public class Repository implements IRepository {
 
@@ -33,13 +26,4 @@ public class Repository implements IRepository {
         instance = null;
     }
 
-    @Override
-    public ExampleModel getExample(int id) {
-        return localRepository.getExampleLocal(id);
-    }
-
-    @Override
-    public void addExample(ExampleModel model) {
-        localRepository.addExampleLocal(model);
-    }
 }
